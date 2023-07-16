@@ -1,3 +1,4 @@
 public struct StorageInterface {
-    public init()
+    public init() {
+    }
 }
