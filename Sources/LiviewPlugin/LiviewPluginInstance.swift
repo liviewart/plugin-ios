@@ -1,17 +1,11 @@
-import CoreGraphics
 import Foundation
 import RealityKit
 
 
-public struct LiviewReferenceImage: Identifiable {
-    public let id: UUID
-    public let image: CGImage
-    public let width: CGFloat
-}
-
 public protocol LiviewPluginInstance {
+    init(storage: StorageInterface)
     func getName() -> String
-    func getModelAsync(referenceImageId: UUID) async throws -> RealityFoundation.Entity
-    func getReferenceImagesAsync() async throws -> [LiviewReferenceImage]
-    func tryToRegisterAsync(_ data: String) async -> Bool
+    func getModel(referenceImageUUID: UUID, onCompletion: (RealityFoundation.Entity?) -> Void)
+    func getReferenceImages(onCompletion: ([LiviewReferenceImage]) -> Void)
+    func tryToRegister(_ data: String) async -> Bool
 }
