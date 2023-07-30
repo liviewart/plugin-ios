@@ -12,5 +12,5 @@ public struct LiviewData {
 }
 
 public protocol StorageInterface {
-    func loadFrom(url: URL, onLoad: (LiviewData) -> Void)
+    func loadFrom(url: URL, @escaping onLoad: (LiviewData) -> Void)
 }
