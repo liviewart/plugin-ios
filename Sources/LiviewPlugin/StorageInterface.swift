@@ -1,16 +1,6 @@
 import Foundation
 
 
-public struct LiviewData {
-    let image: Data?
-    let metadata: Data?
-
-    public init(image: Data?, metadata: Data?) {
-        self.image = image
-        self.metadata = metadata
-    }
-}
-
 public protocol StorageInterface {
-    func loadFrom(url: URL, onLoad: @escaping (LiviewData) -> Void)
+    func loadFrom(url: URL) async -> LiviewData
 }
