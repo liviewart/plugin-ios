@@ -2,5 +2,5 @@ import Foundation
 
 
 public protocol StorageInterface {
-    func loadFrom(url: URL) async -> LiviewData
+    func loadFrom(url: URL) async -> LiviewData?
 }
