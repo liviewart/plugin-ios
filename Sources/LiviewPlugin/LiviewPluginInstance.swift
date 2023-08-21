@@ -3,5 +3,5 @@ import RealityKit
 
 
 public protocol LiviewPluginInstance {
-    func getScene(sceneUUID: UUID, width: CGFloat, height: CGFloat) async -> RealityFoundation.Entity?
+    func getScene(sceneUUID: UUID, width: Float, height: Float) async -> RealityFoundation.Entity?
 }
